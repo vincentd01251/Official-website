@@ -7,7 +7,9 @@
     <meta name="description" content="台南房產顧問劉鴻恩，幸福家九份子加盟店協理。提供專業房地合一稅試算、重購退稅規劃及買房貸款評估。">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -69,7 +71,6 @@
             color: white;
             font-weight: bold;
             font-size: 0.9rem;
-            z-index: 10;
         }
         
         .profile-border {
@@ -77,10 +78,19 @@
             padding: 4px;
             border-radius: 9999px;
         }
+
+        /* Gradient Text & Borders */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #f59e0b, #d97706);
+        }
     </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-amber-100 selection:text-slate-900">
 
+    <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-slate-200 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
@@ -92,43 +102,58 @@
                     </div>
                 </div>
                 
-                <div class="hidden md:flex space-x-8 items-center">
+                <div class="hidden lg:flex space-x-6 items-center">
                     <a href="#about" class="text-slate-600 hover:text-slate-900 font-medium transition hover:border-b-2 hover:border-amber-500 pb-1">關於我</a>
                     <a href="#tools" class="text-slate-600 hover:text-slate-900 font-medium transition hover:border-b-2 hover:border-amber-500 pb-1">專業試算</a>
                     <a href="#social" class="text-slate-600 hover:text-slate-900 font-medium transition hover:border-b-2 hover:border-amber-500 pb-1">社群動態</a>
+                    
+                    <!-- New Resource Link in Nav -->
+                    <a href="https://www.notion.so/fb3196bece3242ceb9b6514134a20cd9" target="_blank" class="text-amber-600 hover:text-amber-700 font-bold transition flex items-center gap-1 hover:scale-105">
+                        <i class="fas fa-gift"></i> 免費資源包
+                    </a>
+
+                    <div class="h-6 w-px bg-slate-200 mx-2"></div>
+
                     <a href="https://line.me/R/ti/p/@814nbtvf" target="_blank" class="bg-[#00B900] hover:bg-[#009900] text-white px-5 py-2 rounded-full font-bold transition shadow-md flex items-center gap-2 transform hover:scale-105">
                         <i class="fab fa-line text-lg"></i>
                         <span>加 LINE 諮詢</span>
                     </a>
                 </div>
 
-                <button class="md:hidden text-slate-900 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <button class="lg:hidden text-slate-900 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-4 space-y-3 shadow-lg">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 p-4 space-y-3 shadow-lg">
             <a href="#about" class="block text-slate-700 font-medium py-2">關於我</a>
             <a href="#tools" class="block text-slate-700 font-medium py-2">專業試算</a>
             <a href="#social" class="block text-slate-700 font-medium py-2">社群動態</a>
+            <a href="https://www.notion.so/fb3196bece3242ceb9b6514134a20cd9" target="_blank" class="block text-amber-600 font-bold py-2"><i class="fas fa-gift mr-1"></i> 領取免費資源包</a>
             <a href="https://line.me/R/ti/p/@814nbtvf" class="block text-[#00B900] font-bold py-2">LINE 預約</a>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="relative hero-bg text-white overflow-hidden pb-12 pt-10 md:pt-20 md:pb-24">
         <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
             
+            <!-- Profile Image Area -->
             <div class="md:order-2 w-full md:w-1/2 flex justify-center md:justify-end">
                 <div class="profile-border shadow-2xl transform transition hover:scale-105 duration-500">
+                    <!-- 
+                        CRITICAL: The src below matches YOUR exact filename. 
+                        Make sure the image file is in the same folder as this HTML file.
+                    -->
                     <div class="profile-container w-64 h-64 md:w-80 md:h-80 bg-slate-800" onclick="document.getElementById('photo-upload').click()">
-                        <img id="profile-img" 
-                             src="598438711_10163871717869309_7317835592139180681_n.jpg" 
+                        <img id="profile-img" src="598438711_10163871717869309_7317835592139180681_n.jpg" 
                              onerror="this.src='https://ui-avatars.com/api/?name=Vincent+Liu&background=0f172a&color=f59e0b&size=512'"
                              alt="劉鴻恩 Vincent Liu" 
                              class="w-full h-full object-cover rounded-full border-4 border-slate-900">
                         
+                        <!-- Upload Overlay -->
                         <div class="upload-overlay">
                             <div class="text-center">
                                 <i class="fas fa-camera text-2xl mb-1"></i><br>
@@ -138,6 +163,7 @@
                     </div>
                     <input type="file" id="photo-upload" accept="image/*" class="hidden" onchange="previewImage(this)">
                     
+                    <!-- Floating Badge -->
                     <div class="absolute bottom-4 -left-4 bg-white text-slate-900 px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 animate-bounce">
                         <i class="fas fa-certificate text-amber-500"></i>
                         <span class="font-bold text-sm">協理級 專業顧問</span>
@@ -145,6 +171,7 @@
                 </div>
             </div>
 
+            <!-- Text Content -->
             <div class="md:order-1 md:w-1/2 space-y-6 text-center md:text-left">
                 <div class="inline-block bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-2">
                     幸福家不動產 九份子加盟店
@@ -158,12 +185,20 @@
                     我不只幫您找房，更透過數據與稅務規劃，為您守護資產的未來。
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-                    <a href="https://line.me/R/ti/p/@814nbtvf" target="_blank" class="bg-[#00B900] hover:bg-[#009000] text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-green-900/20 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 pt-4 justify-center md:justify-start">
+                    <a href="https://line.me/R/ti/p/@814nbtvf" target="_blank" class="bg-[#00B900] hover:bg-[#009000] text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-green-900/20 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 w-full sm:w-auto">
                         <i class="fab fa-line text-xl"></i>
                         <span>LINE 諮詢</span>
                     </a>
-                    <a href="https://www.singfujia.com/0972909959" target="_blank" class="bg-white text-slate-900 hover:bg-slate-100 border border-slate-200 px-8 py-4 rounded-xl font-bold shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    
+                    <!-- NEW RESOURCE BUTTON -->
+                    <a href="https://www.notion.so/fb3196bece3242ceb9b6514134a20cd9" target="_blank" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-amber-900/20 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 w-full sm:w-auto ring-2 ring-amber-300/50">
+                        <i class="fas fa-gift text-xl"></i>
+                        <span>獨家！免費資源包</span>
+                    </a>
+
+                    <a href="https://www.singfujia.com/0972909959" target="_blank" class="bg-white text-slate-900 hover:bg-slate-100 border border-slate-200 px-6 py-4 rounded-xl font-bold shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2 w-full sm:w-auto">
                         <i class="fas fa-home text-slate-500"></i>
                         <span>個人店鋪物件</span>
                     </a>
@@ -175,4 +210,567 @@
                     </a>
                     <a href="https://www.facebook.com/hn.liu.7/" target="_blank" class="hover:text-blue-400 transition"><i class="fab fa-facebook text-xl"></i></a>
                     <a href="https://www.instagram.com/_vincent0125_/" target="_blank" class="hover:text-pink-400 transition"><i class="fab fa-instagram text-xl"></i></a>
-                    <a href="https://www.threads.com/@_vincent0125_" target="_blank" class="hover:text-white trans
+                    <a href="https://www.threads.com/@_vincent0125_" target="_blank" class="hover:text-white transition"><i class="fab fa-threads text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Value Proposition -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">為什麼客戶選擇 Vincent？</h2>
+                <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">市場上的業務很多，但能為您做全盤資產規劃的顧問很少。針對您的痛點，我提供最透明的解決方案。</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">拒絕價格不透明</h3>
+                    <p class="text-slate-600 leading-relaxed">您擔心的買貴或賣低，我用數據來解決。提供完整的實價登錄分析表與周邊行情比較，讓價格攤在陽光下。</p>
+                </div>
+                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">精準稅務規劃</h3>
+                    <p class="text-slate-600 leading-relaxed">房地合一 2.0、重購退稅複雜難懂？不用擔心，我直接算給您看。善用合法節稅管道，把錢留在自己口袋。</p>
+                </div>
+                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">站在您的立場</h3>
+                    <p class="text-slate-600 leading-relaxed">如果這間房子有隱藏風險，我會直接告訴您。我們建立的是長期的信任關係，而不僅僅是一次性的交易。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR TOOLBOX -->
+    <section id="tools" class="py-20 bg-slate-900 text-white relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10">
+                <span class="text-amber-400 font-bold tracking-wider text-sm uppercase">Smart Tools</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">房產決策試算中心</h2>
+                <p class="mt-4 text-slate-400">整合您最需要的計算工具，複雜公式交給我，您專注於決策</p>
+            </div>
+
+            <div class="flex overflow-x-auto no-scrollbar space-x-1 mb-6 border-b border-slate-700">
+                <button onclick="switchTab('mortgage')" id="tab-mortgage" class="tab-active flex-1 py-4 px-6 text-center font-bold text-lg whitespace-nowrap min-w-[160px] rounded-t-lg transition-all">
+                    <i class="fas fa-home mr-2"></i>貸款評估
+                </button>
+                <button onclick="switchTab('tax')" id="tab-tax" class="tab-inactive flex-1 py-4 px-6 text-center font-bold text-lg whitespace-nowrap min-w-[160px] rounded-t-lg transition-all">
+                    <i class="fas fa-file-invoice-dollar mr-2"></i>房地合一稅
+                </button>
+                <button onclick="switchTab('refund')" id="tab-refund" class="tab-inactive flex-1 py-4 px-6 text-center font-bold text-lg whitespace-nowrap min-w-[160px] rounded-t-lg transition-all">
+                    <i class="fas fa-exchange-alt mr-2"></i>重購退稅
+                </button>
+            </div>
+
+            <div class="bg-white text-slate-800 rounded-b-2xl rounded-tr-2xl shadow-2xl overflow-hidden min-h-[500px]">
+                
+                <!-- TOOL 1: Mortgage -->
+                <div id="content-mortgage" class="tool-content grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-8 bg-slate-50 border-r border-slate-100">
+                        <h3 class="font-bold text-slate-800 text-xl mb-6 flex items-center">
+                            <span class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm mr-3">1</span>
+                            參數設定
+                        </h3>
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-600 mb-2">貸款總額 (萬元)</label>
+                                <div class="relative">
+                                    <input type="number" id="mg-amount" value="1200" class="w-full pl-4 pr-12 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none font-mono text-lg transition">
+                                    <span class="absolute right-4 top-3 text-slate-400">萬</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-600 mb-2">年利率 (%)</label>
+                                    <input type="number" step="0.01" id="mg-rate" value="2.1" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none font-mono">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-600 mb-2">寬限期</label>
+                                    <select id="mg-grace" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                                        <option value="0">無寬限期</option>
+                                        <option value="2">2 年</option>
+                                        <option value="3" selected>3 年</option>
+                                        <option value="5">5 年</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-600 mb-2">貸款年限: <span id="mg-year-val" class="text-blue-600 text-lg">30</span> 年</label>
+                                <input type="range" id="mg-years" min="10" max="40" value="30" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            </div>
+                            <button onclick="calculateMortgage()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 rounded-xl shadow-lg transition mt-4">
+                                開始試算
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-white flex flex-col justify-center items-center relative">
+                        <div class="absolute top-4 right-4 text-xs text-slate-400 border border-slate-200 px-2 py-1 rounded">本息平均攤還法</div>
+                        
+                        <div class="w-full max-w-xs text-center mb-8">
+                            <div class="mb-4 p-4 bg-amber-50 rounded-xl border border-amber-100">
+                                <span class="block text-xs text-amber-600 font-bold uppercase tracking-wider mb-1">寬限期內月付</span>
+                                <span id="mg-res-grace" class="text-2xl font-bold text-amber-600 font-mono">-</span>
+                            </div>
+                            <div class="p-5 bg-slate-800 text-white rounded-xl shadow-lg transform scale-105">
+                                <span class="block text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">期後月付 (本利攤)</span>
+                                <span id="mg-res-full" class="text-3xl font-bold font-mono">-</span>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container" style="height: 220px; width: 220px;">
+                            <canvas id="mortgageChart"></canvas>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-4 text-center">藍色：本金 / 黃色：利息總額</p>
+                    </div>
+                </div>
+
+                <!-- TOOL 2: Tax -->
+                <div id="content-tax" class="tool-content grid grid-cols-1 lg:grid-cols-2 hidden">
+                    <div class="p-8 bg-slate-50 border-r border-slate-100">
+                        <h3 class="font-bold text-slate-800 text-xl mb-6 flex items-center">
+                            <span class="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-sm mr-3">2</span>
+                            交易資訊
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-600 mb-1">賣出價 (萬)</label>
+                                    <input type="number" id="tax-sell" value="2000" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-600 mb-1">取得成本 (萬)</label>
+                                    <input type="number" id="tax-buy" value="1400" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-600 mb-1">相關費用 (萬)</label>
+                                    <input type="number" id="tax-cost" value="60" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none">
+                                    <p class="text-[10px] text-slate-400 mt-1">*含仲介/代書/裝修</p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-600 mb-1">漲價總數額</label>
+                                    <input type="number" id="tax-land" value="0" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-600 mb-2">持有期間稅率</label>
+                                <select id="tax-period" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none bg-white">
+                                    <option value="45">2 年以內 (45%)</option>
+                                    <option value="35">2 ~ 5 年 (35%)</option>
+                                    <option value="20" selected>5 ~ 10 年 (20%)</option>
+                                    <option value="15">10 年以上 (15%)</option>
+                                    <option value="10">自住滿 6 年 (免稅400萬+10%)</option>
+                                </select>
+                            </div>
+                            <button onclick="calculateTax()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 rounded-xl shadow-lg transition mt-2">
+                                計算稅額
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-white flex flex-col justify-center">
+                        <div class="space-y-4 w-full">
+                            <div class="flex justify-between items-end border-b border-slate-100 pb-2">
+                                <span class="text-slate-500">帳面獲利</span>
+                                <span id="res-profit" class="text-xl font-bold text-slate-800">0 萬</span>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-slate-100 pb-2">
+                                <span class="text-slate-500">課稅稅基</span>
+                                <span id="res-tax-base" class="text-xl font-bold text-slate-800">0 萬</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-red-50 rounded-lg border border-red-100">
+                                <div class="flex items-center text-red-800 font-bold"><i class="fas fa-file-invoice-dollar mr-2"></i> 預估稅金</div>
+                                <span id="res-tax-final" class="text-2xl font-bold text-red-600">0 萬</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-green-50 rounded-lg border border-green-100">
+                                <div class="flex items-center text-green-800 font-bold"><i class="fas fa-wallet mr-2"></i> 實質淨利</div>
+                                <span id="res-net" class="text-2xl font-bold text-green-600">0 萬</span>
+                            </div>
+                            <div class="chart-container mt-4" style="height: 180px;">
+                                <canvas id="taxChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOOL 3: Refund -->
+                <div id="content-refund" class="tool-content hidden">
+                    <div class="p-10 max-w-4xl mx-auto">
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-8 rounded-r-lg">
+                            <p class="text-sm text-green-800 flex items-start">
+                                <i class="fas fa-info-circle mt-1 mr-2"></i>
+                                <span><strong>重購退稅提醒：</strong> 需符合自住規定（有戶籍登記、無出租營業），且買賣時間差距在 2 年內。</span>
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">舊屋賣出價 (萬)</label>
+                                <input type="number" id="ref-sell" placeholder="1500" class="w-full p-4 border border-slate-300 rounded-xl text-lg outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">新屋買入價 (萬)</label>
+                                <input type="number" id="ref-buy" placeholder="2000" class="w-full p-4 border border-slate-300 rounded-xl text-lg outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">已繳/應繳稅額 (萬)</label>
+                                <input type="number" id="ref-paid" placeholder="50" class="w-full p-4 border border-slate-300 rounded-xl text-lg outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 transition">
+                            </div>
+                        </div>
+
+                        <button onclick="calculateRefund()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg text-lg transition transform active:scale-95 flex justify-center items-center">
+                            <i class="fas fa-calculator mr-2"></i> 計算退稅金額
+                        </button>
+
+                        <div id="refund-result-container" class="mt-10 opacity-50 transition-all duration-500">
+                            <div class="bg-slate-800 text-white rounded-2xl p-8 text-center relative overflow-hidden shadow-2xl">
+                                <div class="absolute inset-0 bg-green-600 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+                                <div class="relative z-10">
+                                    <div class="text-slate-400 text-sm uppercase tracking-widest mb-2 font-bold">預估可退稅金額</div>
+                                    <div id="ref-final-amount" class="text-6xl font-bold mb-4 font-mono tracking-tighter">--- 萬</div>
+                                    <div id="ref-status" class="inline-block bg-white/10 backdrop-blur px-6 py-2 rounded-full text-sm font-bold border border-white/20">
+                                        請輸入數值
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Hub -->
+    <section id="social" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">社群動態</h2>
+                    <p class="mt-2 text-slate-500">追蹤我的最新房產觀點與生活分享</p>
+                </div>
+                <div class="flex space-x-3 mt-4 md:mt-0">
+                    <a href="https://www.facebook.com/hn.liu.7/" target="_blank" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition shadow"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/_vincent0125_/" target="_blank" class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white flex items-center justify-center hover:scale-110 transition shadow"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.threads.com/@_vincent0125_" target="_blank" class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition shadow"><i class="fab fa-threads"></i></a>
+                </div>
+            </div>
+
+            <!-- Social Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- IG -->
+                <a href="https://www.instagram.com/_vincent0125_/" target="_blank" class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-pink-100 to-orange-100 relative flex items-center justify-center">
+                        <i class="fab fa-instagram text-6xl text-white drop-shadow-lg opacity-50 group-hover:scale-110 transition"></i>
+                        <div class="absolute bottom-3 left-3 bg-white/80 backdrop-blur px-2 py-1 rounded text-xs font-bold text-slate-800">
+                            @_vincent0125_
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-800 mb-2">Instagram</h3>
+                        <p class="text-sm text-slate-500">生活記錄、最新物件與限時動態問答。</p>
+                        <div class="mt-4 text-pink-500 text-sm font-bold flex items-center">
+                            追蹤我 <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- FB -->
+                <a href="https://www.facebook.com/hn.liu.7/" target="_blank" class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-blue-100 to-blue-200 relative flex items-center justify-center">
+                        <i class="fab fa-facebook text-6xl text-white drop-shadow-lg opacity-50 group-hover:scale-110 transition"></i>
+                        <div class="absolute bottom-3 left-3 bg-white/80 backdrop-blur px-2 py-1 rounded text-xs font-bold text-slate-800">
+                            劉鴻恩
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-800 mb-2">Facebook</h3>
+                        <p class="text-sm text-slate-500">房產觀點長文、市場分析與成交案例。</p>
+                        <div class="mt-4 text-blue-600 text-sm font-bold flex items-center">
+                            加好友 <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- Threads -->
+                <a href="https://www.threads.com/@_vincent0125_" target="_blank" class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-gray-200 to-gray-400 relative flex items-center justify-center">
+                        <i class="fab fa-threads text-6xl text-white drop-shadow-lg opacity-50 group-hover:scale-110 transition"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-800 mb-2">Threads</h3>
+                        <p class="text-sm text-slate-500">房仲日常、即時碎碎念與互動。</p>
+                        <div class="mt-4 text-slate-800 text-sm font-bold flex items-center">
+                            看串文 <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- Store -->
+                <a href="https://www.singfujia.com/0972909959" target="_blank" class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-100 hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-amber-100 to-orange-200 relative flex items-center justify-center">
+                        <i class="fas fa-home text-6xl text-white drop-shadow-lg opacity-50 group-hover:scale-110 transition"></i>
+                        <div class="absolute bottom-3 left-3 bg-white/80 backdrop-blur px-2 py-1 rounded text-xs font-bold text-slate-800">
+                            幸福家個人店鋪
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-slate-800 mb-2">精選物件</h3>
+                        <p class="text-sm text-slate-500">瀏覽我目前主推的優質好房。</p>
+                        <div class="mt-4 text-amber-600 text-sm font-bold flex items-center">
+                            去逛逛 <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-white pt-16 pb-8 border-t border-amber-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-3xl font-serif font-bold mb-4 text-amber-500">劉鴻恩 Vincent Liu</h3>
+                    <p class="text-slate-400 mb-6 max-w-md">
+                        幸福家不動產 九份子加盟店 協理<br>
+                        您的房產守門員，用心為您成就家的夢想。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/hn.liu.7/" target="_blank" class="bg-slate-800 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/_vincent0125_/" target="_blank" class="bg-slate-800 hover:bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://line.me/R/ti/p/@814nbtvf" target="_blank" class="bg-slate-800 hover:bg-green-600 w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-slate-700 pb-2 inline-block">快速導航</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#about" class="hover:text-amber-400 transition">關於我</a></li>
+                        <li><a href="#tools" class="hover:text-amber-400 transition">房貸試算</a></li>
+                        <li><a href="#tools" class="hover:text-amber-400 transition">稅務試算</a></li>
+                        <li><a href="#social" class="hover:text-amber-400 transition">最新動態</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-slate-700 pb-2 inline-block">聯絡資訊</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-amber-500"></i>
+                            <a href="tel:0972909959" class="hover:text-white">0972-909-959</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-line mt-1 mr-3 text-amber-500"></i>
+                            <a href="https://line.me/R/ti/p/@814nbtvf" target="_blank" class="hover:text-white">Line ID: @814nbtvf</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-amber-500"></i>
+                            <span>台南市安南區 (九份子)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 Vincent Liu. All rights reserved. | Singfujia Real Estate</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Photo Upload/Preview Logic ---
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // --- Chart & Calculator Logic ---
+        let mortgageChart = null;
+        let taxChart = null;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tool-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            
+            ['mortgage', 'tax', 'refund'].forEach(id => {
+                const tab = document.getElementById(`tab-${id}`);
+                if (id === tabId) {
+                    tab.classList.remove('tab-inactive');
+                    tab.classList.add('tab-active');
+                } else {
+                    tab.classList.remove('tab-active');
+                    tab.classList.add('tab-inactive');
+                }
+            });
+
+            if(tabId === 'mortgage') calculateMortgage();
+            if(tabId === 'tax') calculateTax();
+        }
+
+        // --- Mortgage Calculator ---
+        function calculateMortgage() {
+            const amount = parseFloat(document.getElementById('mg-amount').value) * 10000 || 0;
+            const rate = parseFloat(document.getElementById('mg-rate').value) / 100 / 12 || 0;
+            const years = parseInt(document.getElementById('mg-years').value);
+            const graceYears = parseInt(document.getElementById('mg-grace').value);
+            
+            document.getElementById('mg-year-val').innerText = years;
+            const totalMonths = years * 12;
+            const graceMonths = graceYears * 12;
+            const payMonths = totalMonths - graceMonths;
+
+            let gracePay = 0;
+            let monthlyPay = 0;
+            let totalInterest = 0;
+
+            if(graceYears > 0) {
+                gracePay = Math.round(amount * rate);
+                const x = Math.pow(1 + rate, payMonths);
+                monthlyPay = Math.round((amount * rate * x) / (x - 1));
+                totalInterest = (gracePay * graceMonths) + (monthlyPay * payMonths) - amount;
+            } else {
+                gracePay = 0;
+                const x = Math.pow(1 + rate, totalMonths);
+                monthlyPay = Math.round((amount * rate * x) / (x - 1));
+                totalInterest = (monthlyPay * totalMonths) - amount;
+            }
+
+            document.getElementById('mg-res-grace').innerText = graceYears > 0 ? `$${gracePay.toLocaleString()}` : "無寬限期";
+            document.getElementById('mg-res-full').innerText = `$${monthlyPay.toLocaleString()}`;
+
+            const ctx = document.getElementById('mortgageChart').getContext('2d');
+            if(mortgageChart) mortgageChart.destroy();
+            
+            mortgageChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['本金', '利息'],
+                    datasets: [{
+                        data: [amount, totalInterest],
+                        backgroundColor: ['#1e293b', '#f59e0b'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+        document.getElementById('mg-years').addEventListener('input', calculateMortgage);
+
+        // --- Tax Calculator ---
+        function calculateTax() {
+            const sell = parseFloat(document.getElementById('tax-sell').value) || 0;
+            const buy = parseFloat(document.getElementById('tax-buy').value) || 0;
+            const cost = parseFloat(document.getElementById('tax-cost').value) || 0;
+            const land = parseFloat(document.getElementById('tax-land').value) || 0;
+            const periodVal = parseFloat(document.getElementById('tax-period').value);
+
+            let profit = sell - buy - cost - land;
+            if (profit < 0) profit = 0;
+
+            let taxBase = profit;
+            let taxRate = periodVal / 100;
+            let taxAmount = 0;
+
+            if (periodVal === 10) { 
+                if (profit > 400) {
+                    taxBase = profit - 400;
+                    taxRate = 0.1;
+                    taxAmount = taxBase * taxRate;
+                } else {
+                    taxBase = 0;
+                    taxAmount = 0;
+                }
+            } else {
+                taxAmount = taxBase * taxRate;
+            }
+
+            const netProfit = (sell - buy - cost) - taxAmount;
+
+            document.getElementById('res-profit').innerText = profit.toFixed(0) + ' 萬';
+            document.getElementById('res-tax-base').innerText = taxBase.toFixed(0) + ' 萬';
+            document.getElementById('res-tax-final').innerText = taxAmount.toFixed(1) + ' 萬';
+            document.getElementById('res-net').innerText = netProfit.toFixed(1) + ' 萬';
+
+            const ctx = document.getElementById('taxChart').getContext('2d');
+            if(taxChart) taxChart.destroy();
+
+            taxChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['資金分配'],
+                    datasets: [
+                        { label: '成本', data: [buy + cost + land], backgroundColor: '#cbd5e1' },
+                        { label: '稅金', data: [taxAmount], backgroundColor: '#ef4444' },
+                        { label: '淨利', data: [netProfit - land], backgroundColor: '#22c55e' }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { x: { stacked: true, display: false }, y: { stacked: true, display: false } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        // --- Refund Calculator ---
+        function calculateRefund() {
+            const sell = parseFloat(document.getElementById('ref-sell').value) || 0;
+            const buy = parseFloat(document.getElementById('ref-buy').value) || 0;
+            const paid = parseFloat(document.getElementById('ref-paid').value) || 0;
+            
+            const container = document.getElementById('refund-result-container');
+            const statusDiv = document.getElementById('ref-status');
+            const amountDiv = document.getElementById('ref-final-amount');
+
+            container.classList.remove('opacity-50');
+            
+            if(sell === 0 || paid === 0) return;
+
+            let refund = 0;
+            let message = "";
+            let statusClass = "";
+
+            if (buy >= sell) {
+                refund = paid;
+                message = "全額退稅 (大換小/平轉)";
+                statusClass = "inline-block bg-green-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg";
+            } else {
+                refund = paid * (buy / sell);
+                message = "比例退稅 (小換大)";
+                statusClass = "inline-block bg-amber-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg";
+            }
+
+            amountDiv.innerText = refund.toFixed(1) + " 萬";
+            statusDiv.className = statusClass;
+            statusDiv.innerText = message;
+        }
+
+        window.onload = function() {
+            calculateMortgage();
+        };
+    </script>
+</body>
+</html>
